@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+.header {
+  background-color: black;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 { 
+  font-size: 1.5rem;
+  color: white;
+}
+
+.filter {
+  background: hsl(0, 0%, 88%);
+  background-color: hsl(61, 84%, 81%);
+  padding: 5px;
+  margin: 1px;
+  display: grid;
+  grid-template-columns: .5fr 1fr .75fr;
+  grid-template-areas: "search stocked new-entry";
+  font-size: .7rem
+}
+
+.filter .search {
+  grid-area: search;
+}
+
+.filter .stocked {
+  grid-area: stocked;
+  margin: 3px 0 0 3px;
+}
+
+.filter .new-entry {
+  grid-area: new-entry;
+  justify-self: right;
+}
+
+.new-entry button {
+  border: 0;
+  border-radius: 5px;
+  background-color:hsl(224, 100%, 97%);
+  font-size: 0.7rem;
+  color: hsl(120, 54%, 39%);
+  /* font-weight: bold; */
+  box-shadow: 1px 1px 5px #aaa;
+  padding: 5px 7px;
+}
+
+.ice-cream-item {
+  background: hsl(191, 100%, 77%);
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+
+.ice-cream-item button {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 5px;
+  background-color:hsl(224, 100%, 97%);
+  box-shadow: 1px 1px 5px #aaa;
+  margin: 2px;
+  font-weight: bold;
+}
+
+.ice-cream-item button:hover {
+  background-color:hsla(224, 100%, 97%, 0.7);  
+  transition: 0.3s ease;
+}
+
+
+
+
+
+
