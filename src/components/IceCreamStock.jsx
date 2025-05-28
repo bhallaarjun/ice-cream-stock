@@ -107,15 +107,19 @@ const IceCreamStock = () => {
     },
     {
       category: "2L Tub",
-      quantity: 0,
+      quantity: 0, // out of stock item
       brand: "M&S",
       flavour: "Chocolate",
       stocked: false,
     },
   ]);
+
+  // Function to handle adding a new ice cream to the stock when the 'new entry's
+  // button is clicked
   const handleAddIceCream = (newIceCream) => {
     setIceCreams([...iceCreams, newIceCream]);
   };
+  // The main container component that renders the child components
   return (
     <>
       <div className="header">
