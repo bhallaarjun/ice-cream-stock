@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+// Provides a search bar and filter checkbox for users to search and
+// filter ice cream stock.
 const SearchBar = ({
   searchText,
   inStockOnly,

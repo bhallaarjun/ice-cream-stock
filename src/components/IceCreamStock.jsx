@@ -79,6 +79,20 @@ const IceCreamStock = () => {
     },
     {
       category: "460ML Tub",
+      quantity: 1,
+      brand: "Jude's",
+      flavour: "Cherries & Cream",
+      stocked: true,
+    },
+    {
+      category: "460ML Tub",
+      quantity: 1,
+      brand: "Jude's",
+      flavour: "Mint Chocolate",
+      stocked: true,
+    },
+    {
+      category: "460ML Tub",
       quantity: 2,
       brand: "Grom",
       flavour: "Pistachio",
@@ -114,8 +128,8 @@ const IceCreamStock = () => {
     },
   ]);
 
-  // Function to handle adding a new ice cream to the stock when the 'new entry's
-  // button is clicked
+  // Function to handle adding a new ice cream to the stock when the
+  // 'new entry' button is clicked
   const handleAddIceCream = (newIceCream) => {
     setIceCreams([...iceCreams, newIceCream]);
   };
@@ -136,6 +150,7 @@ const IceCreamStock = () => {
       </div>
       <IceCreamList
         iceCreams={iceCreams}
+        setIceCreams={setIceCreams}
         searchText={searchText}
         inStockOnly={inStockOnly}
       />

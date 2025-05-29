@@ -1,7 +1,11 @@
-const AddBtn = () => {
+const AddBtn = ({ iceCream, onAddOne }) => {
+  const handleClick = () => {
+    onAddOne(iceCream);
+  };
+
   return (
     <>
-      <button>+</button>
+      <button onClick={handleClick}>+</button>
     </>
   );
 };

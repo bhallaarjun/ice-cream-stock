@@ -1,7 +1,10 @@
-const RemoveBtn = () => {
+const RemoveBtn = ({ iceCream, onRemoveOne }) => {
+  const handleClick = () => {
+    onRemoveOne(iceCream);
+  };
   return (
     <>
-      <button>-</button>
+      <button onClick={handleClick}>-</button>
     </>
   );
 };
