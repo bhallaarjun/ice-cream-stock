@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Provides a form for adding new ice cream entries to the stock.
 const AddIceCream = ({ onAdd }) => {
   const [showForm, setShowForm] = useState(false);
   const [brand, setBrand] = useState("");
@@ -7,39 +8,44 @@ const AddIceCream = ({ onAdd }) => {
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
 
+  // Displays the form for adding a new ice cream entry
   const handleAddClick = () => {
     setShowForm(true);
   };
 
+  // Validates the input fields and calls the onAdd callback with the new ice cream data
   const handleNewEntry = (e) => {
     e.preventDefault();
     if (brand === "") {
       alert("Please enter a valid brand");
       return;
-    } else if (flavour === "") {
+    }
+    if (flavour === "") {
       alert("Please enter a valid flavour");
       return;
-    } else if (category === "") {
+    }
+    if (category === "") {
       alert("Please enter a valid category");
       return;
-    } else if (quantity === "") {
+    }
+    if (quantity === "") {
       alert("Please enter a valid quantity");
       return;
-    } else {
-      const newIceCream = {
-        brand,
-        flavour,
-        category,
-        quantity: Number(quantity),
-        stocked: quantity > 0,
-      };
-      onAdd(newIceCream);
-      setShowForm(false);
-      setBrand("");
-      setFlavour("");
-      setCategory("");
-      setQuantity("");
     }
+    // If input is valid create a new ice cream object
+    const newIceCream = {
+      brand,
+      flavour,
+      category,
+      quantity: Number(quantity),
+      stocked: quantity > 0,
+    };
+    onAdd(newIceCream);
+    setShowForm(false);
+    setBrand("");
+    setFlavour("");
+    setCategory("");
+    setQuantity("");
   };
   return (
     <>
@@ -48,7 +54,10 @@ const AddIceCream = ({ onAdd }) => {
       </div>
       {showForm && (
         <div className="overlay">
-          <form onSubmit={handleNewEntry}>
+          <form
+            className="form-overlay"
+            onSubmit={handleNewEntry}
+          >
             <input
               type="text"
               placeholder="brand..."
@@ -73,8 +82,10 @@ const AddIceCream = ({ onAdd }) => {
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
             />
-            <button type="submit">Add</button>
-            <button onClick={() => setShowForm(false)}>Cancel</button>
+            <div className="buttons">
+              <button type="submit">Add</button>
+              <button onClick={() => setShowForm(false)}>Cancel</button>
+            </div>
           </form>
         </div>
       )}
