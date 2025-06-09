@@ -1,12 +1,14 @@
 const IceCream = ({ iceCream }) => {
   return (
     <>
-      <h4>
-        {iceCream.brand} {iceCream.flavour}
-      </h4>
-      <p>
-        {iceCream.category} x {iceCream.quantity}
-      </p>
+      <div className="details">
+        <p className="ice-cream">
+          {iceCream.brand} {iceCream.flavour}
+        </p>
+        <p>
+          {iceCream.category} x {iceCream.quantity}
+        </p>
+      </div>
     </>
   );
 };
