@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Provides a search bar and filter checkbox for users to search and
-// filter ice cream stock.
+// Provides a search bar and filter checkbox for searching and filtering ice cream stock.
 const SearchBar = ({
   searchText,
   inStockOnly,
@@ -10,7 +9,6 @@ const SearchBar = ({
 }) => {
   // Local state to manage the debounced search text
   const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
-
   useEffect(() => {
     const handler = setTimeout(() => {
       onSearchTextChange(debouncedSearchText);
@@ -37,7 +35,7 @@ const SearchBar = ({
           <input
             type="checkbox"
             value={inStockOnly} // checkbox bound to prop passed from IceCreamStock
-            onChange={(e) => onInStockOnlyChange(e.target.value)}
+            onChange={(e) => onInStockOnlyChange(e.target.checked)}
           />{" "}
           stocked only
         </label>
