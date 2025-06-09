@@ -5,11 +5,16 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
+  background-color: black;
 }
 
 .wrapper {
-  background: #fff;
+  background-color: white;
+  max-width: 800px;
+  min-width: 365px;
+  width: 100%;
+  justify-self: center;
 }
 
 .header {
@@ -22,27 +27,61 @@ body {
 
 .header h1 { 
   font-size: 1.5rem;
+  font-family: Calibri, sans-serif;
   color: white;
 }
 
 .filter {
-  background: hsl(0, 0%, 88%);
-  background-color: hsl(61, 84%, 81%);
+  background-color: hsl(59, 100%, 91%);
+  background-color: hsl(65, 100%, 87%);
   padding: 5px;
   margin: 1px;
   display: grid;
-  grid-template-columns: .5fr 1fr .75fr;
-  grid-template-areas: "search stocked new-entry";
-  font-size: .7rem
+  grid-template-columns: .5fr 1fr .4fr;
+  grid-template-areas: 
+    "search stocked new-entry"
+    "overlay overlay overlay";
+  align-items: center;
+  font-size: .7rem;
+  position: sticky;
+  top: 0;
 }
 
 .filter .search {
   grid-area: search;
 }
 
+.filter .search input {
+  border: 0;
+  border-radius: 5px;
+  background-color: hsl(224, 100%, 97%);
+  box-shadow: 1px 1px 5px #aaa;
+  padding: 5px 7px;
+  margin: 2px;
+}
+
+.filter .search input:focus {
+  outline: none;
+}
+
 .filter .stocked {
   grid-area: stocked;
-  margin: 3px 0 0 3px;
+  margin-left: 5px;
+  text-wrap:nowrap
+}
+
+.filter .stocked input {
+  margin: 3px 1px 0 3px;
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  box-shadow: 1px 1px 5px #aaa;
+  appearance: none;
+  border-radius: 2px;
+}
+.filter .stocked input:checked {
+  background-color: hsl(120, 54%, 39%);
 }
 
 .filter .new-entry {
@@ -53,38 +92,99 @@ body {
 .new-entry button {
   border: 0;
   border-radius: 5px;
-  background-color:hsl(224, 100%, 97%);
+  cursor: pointer;
+  background-color: #fff;
   font-size: 0.7rem;
   color: hsl(120, 54%, 39%);
-  /* font-weight: bold; */
   box-shadow: 1px 1px 5px #aaa;
   padding: 5px 7px;
 }
 
+.new-entry button:hover {
+  background-color: hsl(0, 0%, 90%);
+  transition: 0.3s ease-in-out;
+}
+
+.overlay {
+  grid-area: overlay;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #aaa;
+}
+
+.overlay form input {
+  border: 0;
+  border-radius: 5px;
+  background-color: hsl(224, 100%, 97%);
+  box-shadow: 1px 1px 5px #aaa;
+  padding: 5px 7px;
+  margin: 2px;
+}
+
+.overlay form input:focus {
+  outline: none;
+}
+
+.overlay form button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: hsl(224, 100%, 97%);
+  font-size: 0.7rem;
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 1px 1px 5px #aaa;
+  padding: 5px 7px;
+  margin: 2px;
+}
+
+.overlay form button:hover {
+   background-color: hsl(0, 0%, 90%);
+  transition: 0.3s ease-in-out;
+}
+
 .ice-cream-item {
-  background: hsl(191, 100%, 77%);
+  background-color: rgb(253, 168, 137);
+  background-color: hsl(191, 100%, 77%);
   border-bottom: 1px solid #eee;
   padding: 10px;
+  display: grid;
+  gap: .5em;
+  grid-template-columns: 1fr .3fr;
+  grid-template-areas: 
+    "details buttons";
+}
+
+.ice-cream-item .details {
+  grid-area: details;
+}
+
+.ice-cream-item .details .ice-cream {
+  font-weight: bold;
+}
+
+.ice-cream-item .buttons {
+  grid-area: buttons;
+  text-wrap: nowrap;
+  justify-self: right;
 }
 
 .ice-cream-item button {
   width: 20px;
   height: 20px;
+  cursor: pointer;
   border: 0;
   border-radius: 5px;
-  background-color:hsl(224, 100%, 97%);
+  background-color: hsl(224, 100%, 97%);
+  color: hsla(0, 0%, 0%, 0.7);
   box-shadow: 1px 1px 5px #aaa;
-  margin: 2px;
+  margin: 4px 2px;
+  font-size: .6rem;
   font-weight: bold;
 }
 
 .ice-cream-item button:hover {
-  background-color:hsla(224, 100%, 97%, 0.7);  
-  transition: 0.3s ease;
+  /* background-color:hsla(0, 0%, 0%, 0.7);
+  color: hsl(224, 100%, 97%); */
+  background-color: hsla(0, 0%, 73%, 0.495);
+  transition: ease-in-out .3s;
 }
-
-
-
-
-
-
