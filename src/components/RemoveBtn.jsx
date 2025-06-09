@@ -4,7 +4,8 @@ const RemoveBtn = ({ iceCream, onRemoveOne }) => {
   };
   return (
     <>
-      <button onClick={handleClick}>-</button>
+      {/* <button onClick={handleClick}>&#8722;</button> */}
+      <button onClick={handleClick}>&#x2796;</button>
     </>
   );
 };

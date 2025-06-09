@@ -5,7 +5,8 @@ const AddBtn = ({ iceCream, onAddOne }) => {
 
   return (
     <>
-      <button onClick={handleClick}>+</button>
+      {/* <button onClick={handleClick}>&#43;</button> */}
+      <button onClick={handleClick}>&#x2795;</button>
     </>
   );
 };
