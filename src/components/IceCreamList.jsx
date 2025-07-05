@@ -4,7 +4,13 @@ import IceCream from "./IceCream";
 import DeleteBtn from "./DeleteBtn";
 
 // Displays a list of ice creams based on the current search and filter criteria.
-const IceCreamList = ({ iceCreams, setIceCreams, searchText, inStockOnly }) => {
+const IceCreamList = ({
+  iceCreams,
+  setIceCreams,
+  searchText,
+  inStockOnly,
+  loading,
+}) => {
   const rows = [];
 
   // Function to handle adding one more of a specific ice cream
@@ -36,6 +42,10 @@ const IceCreamList = ({ iceCreams, setIceCreams, searchText, inStockOnly }) => {
     );
   };
 
+  if (loading) {
+    return <p className="loading">Loading...</p>;
+  }
+
   iceCreams.forEach((iceCream) => {
     // Check if the ice cream matches the search text in any of its properties
     if (
@@ -43,7 +53,7 @@ const IceCreamList = ({ iceCreams, setIceCreams, searchText, inStockOnly }) => {
       !iceCream.flavour.toLowerCase().includes(searchText.toLowerCase()) &&
       !iceCream.category.toLowerCase().includes(searchText.toLowerCase())
     ) {
-      return; // Skip this item if it doesn't match the search text
+      return; // Skip this ice cream if it doesn't include the search text
     }
     // If the "inStockOnly" filter is enabled, skip items that are not in stock
     if (inStockOnly && iceCream.quantity === 0) {

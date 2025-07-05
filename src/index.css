@@ -9,17 +9,23 @@ body {
   background-color: black;
 }
 
+input {
+  outline: none;
+}
+
 .wrapper {
-  background-color: white;
   max-width: 800px;
   min-width: 365px;
   width: 100%;
+  height: 100vh;
   justify-self: center;
 }
 
 .header {
-  background-color: black;
+  width: 100%;
   height: 50px;
+  /* background-color: hsl(189, 68%, 13%); */
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,19 +38,19 @@ body {
 }
 
 .filter {
-  background-color: hsl(59, 100%, 91%);
   background-color: hsl(65, 100%, 87%);
+  background-color: hsl(63, 100%, 78%);
   padding: 5px;
-  margin: 1px;
+  width: 100%;
+  position: sticky;
+  top: 0;
   display: grid;
-  grid-template-columns: .5fr 1fr .4fr;
+  grid-template-columns: .4fr 1fr .4fr;
   grid-template-areas: 
     "search stocked new-entry"
     "overlay overlay overlay";
   align-items: center;
   font-size: .7rem;
-  position: sticky;
-  top: 0;
 }
 
 .filter .search {
@@ -61,13 +67,13 @@ body {
 }
 
 .filter .search input:focus {
-  outline: none;
+  background-color: hsl(0, 0%, 90%);
 }
 
 .filter .stocked {
   grid-area: stocked;
   margin-left: 5px;
-  text-wrap:nowrap
+  text-wrap: nowrap
 }
 
 .filter .stocked input {
@@ -80,6 +86,11 @@ body {
   appearance: none;
   border-radius: 2px;
 }
+
+.filter .stocked input:focus {
+  background-color: hsl(0, 0%, 90%);
+}
+
 .filter .stocked input:checked {
   background-color: hsl(120, 54%, 39%);
 }
@@ -105,11 +116,18 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.new-entry button:active {
+  background-color: hsl(0, 0%, 90%);
+}
+
 .overlay {
   grid-area: overlay;
-  margin-top: 10px;
+  background-color: hsl(65, 100%, 87%);
+  background-color: hsl(63, 100%, 78%);
+  margin: 10px 0px 5px;
   border-radius: 10px;
   box-shadow: 2px 2px 5px #aaa;
+  padding: 5px;
 }
 
 .overlay form input {
@@ -118,11 +136,11 @@ body {
   background-color: hsl(224, 100%, 97%);
   box-shadow: 1px 1px 5px #aaa;
   padding: 5px 7px;
-  margin: 2px;
+  margin: 4px;
 }
 
 .overlay form input:focus {
-  outline: none;
+  background-color: hsl(0, 0%, 90%);
 }
 
 .overlay form button {
@@ -138,13 +156,28 @@ body {
 }
 
 .overlay form button:hover {
-   background-color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 90%);
   transition: 0.3s ease-in-out;
 }
 
+.content {
+  background-color: black;
+  width: 100%;
+}
+
+.content .loading {
+  background-color: black;
+  height: 100vh;
+  color: white;
+  font-size: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 .ice-cream-item {
-  background-color: rgb(253, 168, 137);
   background-color: hsl(191, 100%, 77%);
+  background-color: aquamarine;
   border-bottom: 1px solid #eee;
   padding: 10px;
   display: grid;
@@ -156,6 +189,7 @@ body {
 
 .ice-cream-item .details {
   grid-area: details;
+  font-size: .9rem;
 }
 
 .ice-cream-item .details .ice-cream {
@@ -183,8 +217,6 @@ body {
 }
 
 .ice-cream-item button:hover {
-  /* background-color:hsla(0, 0%, 0%, 0.7);
-  color: hsl(224, 100%, 97%); */
   background-color: hsla(0, 0%, 73%, 0.495);
   transition: ease-in-out .3s;
 }

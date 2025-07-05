@@ -84,7 +84,12 @@ const AddIceCream = ({ onAdd }) => {
             />
             <div className="buttons">
               <button type="submit">Add</button>
-              <button onClick={() => setShowForm(false)}>Cancel</button>
+              <button
+                type="button"
+                onClick={() => setShowForm(false)}
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>
