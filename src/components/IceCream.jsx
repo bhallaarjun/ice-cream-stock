@@ -1,3 +1,4 @@
+//
 const IceCream = ({ iceCream }) => {
   return (
     <div className="details">

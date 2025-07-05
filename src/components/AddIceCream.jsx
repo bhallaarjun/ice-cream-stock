@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//
 // Provides a form for adding new ice cream entries to the stock.
 const AddIceCream = ({ onAdd }) => {
   const [showForm, setShowForm] = useState(false);
