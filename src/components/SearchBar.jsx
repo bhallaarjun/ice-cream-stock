@@ -1,4 +1,3 @@
-//
 import { useState, useEffect } from "react";
 
 // Provides a search bar and filter checkbox for searching and filtering ice cream stock.

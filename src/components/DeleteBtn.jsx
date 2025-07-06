@@ -1,4 +1,3 @@
-//
 const DeleteBtn = ({ iceCream, onDeleteOne }) => {
   const handleClick = () => {
     const response = confirm(

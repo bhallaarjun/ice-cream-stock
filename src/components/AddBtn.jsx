@@ -1,4 +1,3 @@
-//
 const AddBtn = ({ iceCream, onAddOne }) => {
   const handleClick = () => {
     onAddOne(iceCream);

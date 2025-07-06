@@ -1,4 +1,3 @@
-//
 const RemoveBtn = ({ iceCream, onRemoveOne }) => {
   const handleClick = () => {
     onRemoveOne(iceCream);

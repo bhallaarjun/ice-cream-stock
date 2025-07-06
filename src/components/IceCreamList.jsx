@@ -1,4 +1,3 @@
-//
 import AddBtn from "./AddBtn";
 import RemoveBtn from "./RemoveBtn";
 import IceCream from "./IceCream";
